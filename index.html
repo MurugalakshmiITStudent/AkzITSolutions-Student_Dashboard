@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Dashboard - Modern Educational UI">
+    <title>EduTrack - Student Dashboard</title>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-theme.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="dashboard">
+        <!-- ========== SIDEBAR ========== -->
+        <aside class="sidebar" role="navigation" aria-label="Main navigation">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>EduTrack</span>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#" class="active" aria-current="page">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-book"></i>
+                    <span>Courses</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-tasks"></i>
+                    <span>Tasks</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Grades</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Schedule</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-users"></i>
+                    <span>Community</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            
+            <div class="user-profile">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%236C63FF'/%3E%3Ccircle cx='20' cy='15' r='7' fill='%23ffffff' opacity='0.8'/%3E%3Cpath d='M5 33c3-5 8-8 15-8s12 3 15 8' fill='%23ffffff' opacity='0.8'/%3E%3C/svg%3E" 
+                     alt="User profile picture" 
+                     class="avatar">
+                <div>
+                    <p class="user-name">Murugalakshmi V</p>
+                    <p class="user-role">Student</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ========== MAIN CONTENT ========== -->
+        <main class="main-content" id="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div>
+                    <h1>Welcome back, Murugalakshmi! 👋</h1>
+                    <p class="subtitle">Here's your academic overview for this semester</p>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search courses, tasks..." aria-label="Search">
+                    </div>
+                    
+                    <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <div class="notification-wrapper">
+                        <button class="icon-btn notification-bell" aria-label="Notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge" id="notification-badge">3</span>
+                        </button>
+                        <div class="notification-dropdown" id="notification-dropdown">
+                            <div class="dropdown-header">
+                                <h4>Notifications</h4>
+                                <button class="mark-all-read">Mark all read</button>
+                            </div>
+                            <div class="notification-list">
+                                <!-- Dynamic notifications -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stats Grid -->
+            <section class="stats-grid" aria-label="Statistics overview">
+                <div class="stat-card" style="--card-color: #6C63FF;">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Current GPA</h3>
+                        <p class="stat-number">8.48</p>
+                        <span class="trend positive">
+                            <i class="fas fa-arrow-up"></i> 0.2 from last sem
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="stat-card" style="--card-color: #00D4AA;">
+                    <div class="stat-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Courses</h3>
+                        <p class="stat-number">6</p>
+                        <span>4 active, 2 upcoming</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card" style="--card-color: #FFC857;">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Tasks Due</h3>
+                        <p class="stat-number" id="task-count">4</p>
+                        <span id="task-subtext">2 urgent</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card" style="--card-color: #FF6584;">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Attendance</h3>
+                        <p class="stat-number">92%</p>
+                        <span class="trend positive">
+                            <i class="fas fa-arrow-up"></i> 5% this month
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Section -->
+            <section class="charts-container">
+                <div class="chart-box">
+                    <div class="chart-header">
+                        <h3><i class="fas fa-chart-bar" style="color: var(--primary);"></i> Subject Grades</h3>
+                        <span class="chart-subtitle">Current semester performance</span>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="gradeChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-box">
+                    <div class="chart-header">
+                        <h3><i class="fas fa-chart-pie" style="color: var(--secondary);"></i> Task Progress</h3>
+                        <span class="chart-subtitle">Overall task completion</span>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="taskChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Task Management -->
+            <section class="task-section">
+                <div class="task-header">
+                    <div>
+                        <h2><i class="fas fa-tasks" style="color: var(--primary);"></i> Upcoming Tasks</h2>
+                        <p class="task-subtitle">Manage your daily tasks and assignments</p>
+                    </div>
+                    <button class="btn-primary" id="add-task-btn">
+                        <i class="fas fa-plus"></i> Add Task
+                    </button>
+                </div>
+                
+                <!-- Add Task Form -->
+                <div id="task-form-container" class="hidden">
+                    <form id="add-task-form" class="task-form">
+                        <div class="form-group">
+                            <input type="text" id="task-title" placeholder="Task title..." required>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" id="task-due" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="task-priority">
+                                <option value="low">🟢 Low Priority</option>
+                                <option value="medium" selected>🟡 Medium Priority</option>
+                                <option value="high">🔴 High Priority</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-success">
+                            <i class="fas fa-plus"></i> Add Task
+                        </button>
+                        <button type="button" class="btn-secondary" id="cancel-task-btn">Cancel</button>
+                    </form>
+                </div>
+                
+                <!-- Task Filters -->
+                <div class="task-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="high">🔴 High</button>
+                    <button class="filter-btn" data-filter="medium">🟡 Medium</button>
+                    <button class="filter-btn" data-filter="low">🟢 Low</button>
+                    <button class="filter-btn" data-filter="completed">✅ Completed</button>
+                </div>
+                
+                <!-- Task List -->
+                <ul id="task-list">
+                    <!-- Tasks rendered by JavaScript -->
+                </ul>
+                
+                <div id="empty-state" class="hidden">
+                    <i class="fas fa-check-circle"></i>
+                    <p>All tasks completed! 🎉</p>
+                    <span>Great job! You're all caught up.</span>
+                </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="activity-section">
+                <h2><i class="fas fa-history" style="color: var(--primary);"></i> Recent Activity</h2>
+                <div class="activity-timeline">
+                    <div class="activity-item">
+                        <div class="activity-icon" style="background: var(--success);">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p><strong>Math Assignment</strong> completed</p>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon" style="background: var(--warning);">
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p><strong>Science Project</strong> updated</p>
+                            <span class="activity-time">5 hours ago</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon" style="background: var(--primary);">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p>New course <strong>History 101</strong> added</p>
+                            <span class="activity-time">Yesterday</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/app.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/tasks.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+</html>
