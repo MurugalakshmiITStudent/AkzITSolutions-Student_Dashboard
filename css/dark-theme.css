@@ -1,0 +1,174 @@
+/* ========================================
+   DARK THEME
+   ======================================== */
+
+[data-theme="dark"] {
+    /* Colors */
+    --primary: #7C73FF;
+    --primary-dark: #6C63FF;
+    --primary-light: #9B93FF;
+    
+    /* Neutrals - Dark Theme */
+    --bg-primary: #0F1117;
+    --bg-secondary: #1A1D26;
+    --bg-tertiary: #242836;
+    --bg-card: #1A1D26;
+    
+    --text-primary: #E8EAED;
+    --text-secondary: #9BA1B5;
+    --text-muted: #6B7280;
+    
+    --border-color: #2D313E;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Dark Theme Specific Overrides */
+[data-theme="dark"] .sidebar {
+    border-right-color: var(--border-color);
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .logo {
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .nav-menu a:hover {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .nav-menu a.active {
+    background: var(--primary);
+    color: white;
+}
+
+[data-theme="dark"] .stat-card {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .stat-card:hover {
+    border-color: var(--primary);
+}
+
+[data-theme="dark"] .chart-box,
+[data-theme="dark"] .task-section,
+[data-theme="dark"] .activity-section {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .task-item {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .task-item:hover {
+    border-color: var(--primary);
+}
+
+[data-theme="dark"] .search-box {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .search-box:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+}
+
+[data-theme="dark"] .icon-btn {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .icon-btn:hover {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .notification-dropdown {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .notif-item:hover {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .notif-item.unread {
+    background: rgba(108, 99, 255, 0.1);
+}
+
+[data-theme="dark"] .task-form {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group select {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+}
+
+[data-theme="dark"] .filter-btn {
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .filter-btn:hover {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .filter-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+[data-theme="dark"] .btn-secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+    background: var(--border-color);
+}
+
+[data-theme="dark"] .activity-item {
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .notification-bell .badge {
+    border-color: var(--bg-secondary);
+}
+
+[data-theme="dark"] .user-profile {
+    border-top-color: var(--border-color);
+}
+
+[data-theme="dark"] .header {
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .dropdown-header {
+    border-bottom-color: var(--border-color);
+}
+
+/* Dark Theme - Scrollbar */
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: var(--primary-dark);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
